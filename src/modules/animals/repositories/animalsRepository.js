@@ -32,8 +32,9 @@ class AnimalsRepository {
         db.animals.push(animal);
         await this.writeDB(db);
         return animal;
-
     }
+
+    
 
 }
 

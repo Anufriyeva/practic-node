@@ -29,6 +29,16 @@
       "isVaccinated": true,
       "gender": "male",
       "species": "cat"
+    },
+    {
+      "id": "0YVrP02Oe6f7GnXSCWs_W",
+      "createdAt": "2023-11-23T13:31:31.042Z",
+      "updatedAt": "2023-11-23T13:31:31.042Z",
+      "name": "Jack",
+      "age": 2,
+      "isVaccinated": true,
+      "gender": "male",
+      "species": "cat"
     }
   ]
 }

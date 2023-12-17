@@ -15,13 +15,40 @@ class AnimalController {
     };
     
     getAnimals = async (req, res) => {
-        const animals = await this.animalsService.getAll();
+        const {
+            limit = 5,
+            page = 1,
+            isVaccinated,
+            sortBy,
+            order = 'asc',
+            minAge,
+        } = req.query;
+        const config = {
+            limit: parseInt(limit),
+            page: parseInt(page),
+        };
+
+        if (isVaccinated) {
+            config.isVaccinated = Boolean(parseInt(isVaccinated));
+        }
+
+        if (sortBy) {
+            config.sortBy = sortBy;
+            config.order = order;
+        }
+
+        if (minAge) {
+            config.minAge = parseInt(minAge);
+        }
+
+        const { animals, count } = await this.animalsService.getAll(config);
+
         res.json({
             status: 200,
             message: 'Successfully retrieved all animals!',
-            data: animals,
+            data: { animals, count, limit: parseInt(limit), page: parseInt(page) },
         });
-    }
+    };
     
     createAnimal = async (req, res) => {
         const animal = await this.animalsService.create(req.body);

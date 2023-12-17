@@ -1,15 +1,39 @@
-const fs = require('node:fs/promises');
-setInterval(() => console.log('test'), 1000);
+const { Command } = require('commander');
+const animalsService = require('./src/modules/animals/services/animalsService');
+const program = new Command();
 
-(async () => {
-    const content = await fs.readFile('text.txt');
-    console.log(content.toString('utf-8'));
-})();
+program
+  .name('pet-app')
+  .description('Amazing pet app')
+  .version('1.0.0');
 
+program.command('get-animal')
+  .description('Get one or many animals')
+  .option('-i, --id <id>', 'animal id')
+    .action(async ({ id }) => {
+        if (!id) {
+            const animals = await animalsService.getAll();
+            console.log('Animals were found', animals)
+        } else {
+            const animal = await animalsService.getOneById(id);
+            console.log('Animal was found', animal)
+      }
+  });
 
-// const fs = require('node:fs');
+  program.command('create-animal')
+      .description('Create animal')
+      .argument('<payload>')
+      .action(async (payload) => {
+          const animal = await animalsService.create(JSON.parse(payload));
+          console.log('Animals was created', animal);
+      });
+  
+program.command('update-animal')
+    .description('Update animal by id')
+    .argument('<payload>')
+    .requiredOption('-i, --id <id>', 'animal id')
+      .action((payload, options) => {
+          console.log('update animal', payload, options);
+      });
 
-// fs.readFile('text.txt', (error, data) => {
-//     console.log('error', error)
-//     console.log('data', data)
-// });
+program.parse(process.argv);

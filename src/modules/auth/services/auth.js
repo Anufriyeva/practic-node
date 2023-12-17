@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const crypto = require('node:crypto');
 const jwt = require('jsonwebtoken');
 const usersService = require('../../users/services/users');
 const HttpError = require('../../common/models/HttpError');
@@ -30,14 +31,46 @@ class AuthService {
         if (!arePasswordsEqual) {
             throw new HttpError(401, 'Email and password does not match!');
         }
-        const token = jwt.sign({
+        const accessToken = jwt.sign({
             sub: user._id,
             email: user.email,
-        }, JWT_SECRET, { expiresIn: 3600 },);
-        return token;
-        // console.log(user);
+        }, JWT_SECRET, { expiresIn: 120 },);
+
+        const refreshToken = crypto.randomBytes(8).toString('base64');
+        await this.usersService.updateUserById(user._id, { refreshToken });
+        // console.log(refreshToken);
+
+        return {accessToken, refreshToken};
+        
         // return user;
     }
+
+    async refreshAccess(token) {
+        if (!token) {
+            throw new HttpError(401, 'Refresh token is invalid');
+        };
+        const user = await usersService.findUserByRefreshToken(token);
+        if (!user) {
+            throw new HttpError(401, 'Refresh token is invalid');
+        };
+
+        const accessToken = jwt.sign(
+            {
+                sub: user._id,
+                email: user.email,
+            },
+            JWT_SECRET,
+            { expiresIn: 120 },
+        );
+
+        const refreshToken = crypto.randomBytes(8).toString('base64');
+        await this.usersService.updateUserById(user._id, { refreshToken });
+
+        return {
+            accessToken,
+            refreshToken,
+        };
+    };
 }
 
 const authService = new AuthService(usersService);

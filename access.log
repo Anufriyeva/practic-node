@@ -202,3 +202,16 @@ wqfE8ImwOxUxqgw8WqSqo GET /api/v1/animals/6575afb16a1cba91f5213b9d 401 43 - 5.84
 qsbjtgpXSAQo9pY63LkOp POST /api/v1/auth/login 200 290 - 219.602 ms
 14qGPOpi78jO675uvAK-r GET /api/v1/animals/6575afb16a1cba91f5213b9d 200 269 - 174.690 ms
 OPZc3ghvlAS07U0keaxmd GET /api/v1/animals 200 1138 - 214.178 ms
+G1Fue4W5ZYHZkg33XjFPI POST /api/v1/auth/register 500 105 - 2.890 ms
+xCkKjkZiejquToYmzAIgb POST /api/v1/auth/register 200 250 - 136.346 ms
+-aHotRQa4cSd1phgwZETP POST /api/v1/auth/get-reset-token 500 131 - 2.796 ms
+Nih8Si_OXatlWEjfyFUQb POST /api/v1/auth/get-reset-token 200 66 - 597.214 ms
+Xl1nCzCb30s6Yx46FsGtg POST /api/v1/auth/get-reset-token 200 66 - 551.443 ms
+-ES0vJ2mJWZAWScyyPdPb POST /api/v1/auth/get-reset-token 200 66 - 698.001 ms
+wWHWXxe2556EpEi-tm1C6 POST /api/v1/auth/get-reset-token 200 66 - 1003.573 ms
+3uhYNIOg4nPw8YB9cY6Gs POST /api/v1/auth/reset-password 200 44 - 132.231 ms
+gS9WXsNg9vHzhzhaHvFFT POST /api/v1/auth/login 401 65 - 113.951 ms
+gHxBaPavAUhF7tyZLtXq1 POST /api/v1/auth/login 401 65 - 139.902 ms
+jBPe_tuy4j3grNUlVXhNS POST /api/v1/auth/login 200 290 - 184.244 ms
+ZEwbkETWbGxNSM2wyCQjR POST /api/v1/auth/login 401 65 - 136.711 ms
+LtVQDwl5cY6G75kqoW8Sp POST /api/v1/auth/login 200 290 - 174.166 ms

@@ -74,4 +74,4 @@ class AuthService {
 }
 
 const authService = new AuthService(usersService);
-module.exports = authService;
+module.exports = {authService, AuthService};

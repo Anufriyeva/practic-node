@@ -198,3 +198,7 @@ YyLFuIjc7hlS_irZbe_Nn PUT /api/v1/users/me 200 334 - 143.481 ms
 3djJvH_tvCYuhZ-_SzuxE PUT /api/v1/users/me 200 334 - 154.698 ms
 VFL6L6siO2yPaG1bwHCW1 GET /uploads/1703592365335_photo_2023-11-23_13-42-29.jpg 200 21910 - 7.408 ms
 -DvpJHZxW3_NmTpy8tJL- PUT /api/v1/users/me 200 369 - 1284.017 ms
+wqfE8ImwOxUxqgw8WqSqo GET /api/v1/animals/6575afb16a1cba91f5213b9d 401 43 - 5.841 ms
+qsbjtgpXSAQo9pY63LkOp POST /api/v1/auth/login 200 290 - 219.602 ms
+14qGPOpi78jO675uvAK-r GET /api/v1/animals/6575afb16a1cba91f5213b9d 200 269 - 174.690 ms
+OPZc3ghvlAS07U0keaxmd GET /api/v1/animals 200 1138 - 214.178 ms

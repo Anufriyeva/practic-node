@@ -215,3 +215,8 @@ gHxBaPavAUhF7tyZLtXq1 POST /api/v1/auth/login 401 65 - 139.902 ms
 jBPe_tuy4j3grNUlVXhNS POST /api/v1/auth/login 200 290 - 184.244 ms
 ZEwbkETWbGxNSM2wyCQjR POST /api/v1/auth/login 401 65 - 136.711 ms
 LtVQDwl5cY6G75kqoW8Sp POST /api/v1/auth/login 200 290 - 174.166 ms
+Xd4TzTz8VAu6PsOccsoKW POST /api/v1/auth/login 200 290 - 206.760 ms
+6PfwMugiXHGGXGsk2igxv POST /api/v1/auth/login 200 290 - 268.464 ms
+89h2Pfel9h6Srm_8GITWR POST /api/v1/auth/login 200 290 - 255.657 ms
+pbyz4pRiz9QrR6esgyrBT POST /api/v1/auth/register 200 246 - 148.485 ms
+6NJYhSyOoowhcsuBSnZlb POST /api/v1/auth/login 200 285 - 299.568 ms

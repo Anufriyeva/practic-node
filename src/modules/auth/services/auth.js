@@ -36,7 +36,7 @@ class AuthService {
         const accessToken = jwt.sign({
             sub: user._id,
             email: user.email,
-        }, JWT_SECRET, { expiresIn: 120 },);
+        }, JWT_SECRET, { expiresIn: 12000 },);
 
         const refreshToken = crypto.randomBytes(8).toString('base64');
         await this.usersService.updateUserById(user._id, { refreshToken });

@@ -49,11 +49,14 @@
     "to-regex-range": "^5.0.1",
     "touch": "^3.1.0",
     "undefsafe": "^2.0.5",
+    "ws": "^8.16.0",
     "yallist": "^4.0.0"
   },
   "scripts": {
     "start": "node src/express/index.js",
     "dev": "nodemon src/express/index.js",
+    "start:ws": "node ws.js",
+    "dev:ws": "nodemon ws.js",
     "test": "jest"
   },
   "author": "",
